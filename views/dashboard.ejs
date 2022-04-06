@@ -1,0 +1,119 @@
+<link rel="stylesheet" type="text/css" href="/public/css/style.css" />
+<script src="cb.js"></script>
+<div class="d-flex justify-content-between">
+    <h1 class="mt-4">Dashboard</h1>
+    <div class="left">
+        <div class="d-flex justify-content-sm-center"><a href="/profile"><p class="btn btn-dark">  User </a></p> 
+            <a href="/task" class="btn btn-light"> Task</a>
+               <a href="/users/logout" class="btn btn-light"> Logout</a></div>
+    </div>
+    
+</div>
+<p class="lead mb-3">Welcome <%= user.name %>
+</p>
+
+<p class="lead mb-3">My Courses</p>
+
+<iframe width="500" height="295" src="https://www.youtube.com/embed/4NfFFsQC77M" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+<div class="deadline">
+    Deadline = 20/4/2021
+    <div class="d-flex justify-content-sm"><p class="btn btn-dark" > 
+        <button id="mk"></button></p> 
+</div>
+
+<iframe width="500" height="295" src="https://www.youtube.com/embed/BsDoLVMnmZs" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+<div class="deadline">
+    Deadline = 25/4/2021
+    <div class="d-flex justify-content-sm"><p class="btn btn-dark" > 
+        <button id="mk1"></button></p> 
+</div>
+
+<iframe width="500" height="295" src="https://www.youtube.com/embed/RSIclWvNTdQ" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+    <div class="deadline">
+        Deadline = 30/4/2021
+        <div class="d-flex justify-content-sm"><p class="btn btn-dark" > 
+            <button id="mk2"></button></p> 
+    </div>
+
+<iframe width="500" height="295" src="https://www.youtube.com/embed/rZ41y93P2Qo" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+    <div class="deadline">
+        Deadline = 4/5/2021
+        <div class="d-flex justify-content-sm"><p class="btn btn-dark" > 
+            <button id="mk3"></button></p> 
+    </div>
+    
+    <script>
+        let btn = document.querySelector('#mk');
+        btn.addEventListener('click', () => {
+            localStorage.setItem("video1 <%= user.name %>","completed")
+           
+        })
+        
+        let btn1 = document.querySelector('#mk1');
+        btn1.addEventListener('click', () => {
+            localStorage.setItem("video2 <%= user.name %>","completed")
+    
+        })
+
+        let btn2 = document.querySelector('#mk2');
+        btn1.addEventListener('click', () => {
+            localStorage.setItem("video3 <%= user.name %>","completed")
+    
+        })
+
+        let btn3 = document.querySelector('#mk3');
+        btn1.addEventListener('click', () => {
+            localStorage.setItem("video4 <%= user.name %>","completed")
+    
+        })
+        
+        setInterval(() => {
+            if(localStorage.getItem("video1 <%= user.name %>") === "completed"){
+                btn.innerText = "completed";
+            }
+            else{
+                btn.innerText = "marks as uncompleted";
+
+            }
+        }, 1000);
+        
+        setInterval(() => {
+            if(localStorage.getItem("video2 <%= user.name %>") === "completed"){
+                btn1.innerText = "completed";
+            }
+            else{
+                btn1.innerText = "marks as uncompleted";
+
+            }
+        }, 1000);
+
+        setInterval(() => {
+            if(localStorage.getItem("video3 <%= user.name %>") === "completed"){
+                btn2.innerText = "completed";
+            }
+            else{
+                btn2.innerText = "marks as uncompleted";
+
+            }
+        }, 1000);
+
+        setInterval(() => {
+            if(localStorage.getItem("video4 <%= user.name %>") === "completed"){
+                btn3.innerText = "completed";
+            }
+            else{
+                btn3.innerText = "marks as uncompleted";
+
+            }
+        }, 1000);
+        
+    </script>
+

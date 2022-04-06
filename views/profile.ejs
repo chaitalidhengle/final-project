@@ -1,0 +1,25 @@
+<link rel="stylesheet" type="text/css" href="/public/css/style.css" />
+
+<div class="d-flex justify-content-between">
+    <h1 class="mt-4">User Profile</h1>
+    <div class="left">
+        <div class="d-flex justify-content-sm-center"><a href="/dashboard"><p class="btn btn-dark">  daashboard </a></p> 
+                
+               <a href="/users/logout" class="btn btn-light"> Logout</a></div>
+    </div>
+    
+</div><br>
+<p class="lead mb-3">User Name : <%= user.name %>
+</p>
+
+<p class="lead mb-3">Email : <%= user.email %>
+</p>
+
+<p class="lead mb-3">Role : Student
+</p>
+
+<p class="lead mb-3">Course : Software Development
+</p>
+
+<p class="lead mb-3"> Registration Date :  <%= user.date %>
+</p>
